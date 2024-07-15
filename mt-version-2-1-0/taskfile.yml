@@ -1,0 +1,31 @@
+version: '3'
+
+silent: true
+
+tasks:
+
+  build:
+    desc: Builds in debug mode
+    cmds:
+      - cmd: cargo +stable build
+
+  clean:
+    desc: Removes all target artifacts
+    cmds:
+      - cmd: cargo clean
+
+  clippy:
+    desc: Runs clippy
+    cmds:
+      - cmd: cargo +stable clippy --all-targets
+      - cmd: cargo +nightly clippy --all-targets
+
+  fmt:
+    desc: Formats the code
+    cmds:
+      - cmd: cargo fmt
+
+  test:
+    desc: Runs all tests in debug mode
+    cmds:
+      - cmd: cargo +stable test
